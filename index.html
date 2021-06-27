@@ -103,7 +103,7 @@
           <!-- Column -->
           <div class="col-md-6 ml-auto align-self-center mt-3 mt-md-0">
             <h1 class="title">
-              I’m Angelina Flintoff
+              I’m pulkit Singh
               <b class="font-weight-bold">
                 <br />
                 <span
@@ -122,7 +122,7 @@
       </div>
     </div>
 
-    <!--? =========================== PROGRESSION BAR ==================================================== -->
+    <!--? =========================== PROGRESSION BAR ==================================== -->
 
     <style>
       .service-11 {
@@ -238,43 +238,128 @@
         font-size: 16px;
       }
 
-      .progress-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 20vh;
-        margin: 0;
+      .progress_bar .pro-bar {
+        background: hsl(0, 0%, 97%);
+        box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+        height: 4px;
+        margin-bottom: 12px;
+        margin-top: 50px;
+        position: relative;
       }
-      .progress {
-        height: 16px;
-        width: 600px;
-        background-color: lightgray;
-        border-radius: 20px;
+      .progress_bar .progress_bar_title {
+        color: hsl(218, 4%, 50%);
+        font-size: 15px;
+        font-weight: 300;
+        position: relative;
+        top: -28px;
+        z-index: 1;
       }
-
-      .progress-done {
-        height: 100%;
+      .progress_bar .progress_number {
+        float: right;
+        margin-top: -0px;
+      }
+      .progress_bar .progress-bar-inner {
+        background-color: hsl(0, 0%, 88%);
+        display: block;
         width: 0;
-        opacity: 0;
-        background: linear-gradient(to left, #f2709c, #ff9472);
-        color: #fff;
-        border-radius: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
-        transition: 1s ease;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 1s linear 0s;
+      }
+      .progress_bar .progress-bar-inner:before {
+        content: "";
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        right: 1px;
+        top: 0;
+        z-index: 1;
+      }
+      .progress_bar .progress-bar-inner:after {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background-color: inherit;
+        border-radius: 50%;
+        position: absolute;
+        right: -4px;
+        top: -5px;
       }
     </style>
 
-    <div class="progress-container">
-      <div class="progress shadow">
-        <div class="progress-done" data-done="60">60%</div>
+    <div class="py-5">
+      <div class="container">
+        <h1 class="text-center">Skills</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress_bar">
+              <div class="pro-bar">
+                <small class="progress_bar_title">
+                  HTML<span class="progress_number">89%</span>
+                </small>
+                <span
+                  class="progress-bar-inner"
+                  style="background-color: #1abc9c; width: 89%"
+                  data-value="89"
+                  data-percentage-value="89"
+                ></span>
+              </div>
+            </div>
+            <div class="progress_bar">
+              <div class="pro-bar">
+                <small class="progress_bar_title">
+                  C<span class="progress_number">75%</span>
+                </small>
+                <span
+                  class="progress-bar-inner"
+                  style="background-color: #fdba04; width: 75%"
+                  data-value="75"
+                  data-percentage-value="75"
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress_bar">
+              <div class="pro-bar">
+                <small class="progress_bar_title">
+                  HTML<span class="progress_number">89%</span>
+                </small>
+                <span
+                  class="progress-bar-inner"
+                  style="background-color: #bc1a86; width: 89%"
+                  data-value="89"
+                  data-percentage-value="89"
+                ></span>
+              </div>
+            </div>
+            <div class="progress_bar">
+              <div class="pro-bar">
+                <small class="progress_bar_title">
+                  C<span class="progress_number">75%</span>
+                </small>
+                <span
+                  class="progress-bar-inner"
+                  style="background-color: #1d04fd; width: 75%"
+                  data-value="75"
+                  data-percentage-value="75"
+                ></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
+    <!--? =========================== CARDS ==================================================== -->
+
     <div class="bg-light py-5 service-11">
       <div class="container">
+        <h1 class="text-center">Work experience</h1>
         <!-- Row  -->
         <div class="row">
           <!-- Column -->
