@@ -65,3 +65,14 @@ setTimeout(() => {
   progress.style.opacity = 1;
   progress.style.width = progress.getAttribute("data-done") + "%";
 }, 500);
+
+// * Off Canvas
+(function () {
+  "use strict";
+
+  document
+    .querySelector("#navbarSideCollapse")
+    .addEventListener("click", function () {
+      document.querySelector(".offcanvas-collapse").classList.toggle("open");
+    });
+})();
