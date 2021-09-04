@@ -1,710 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/style.css" />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <!--? ==========================  HEADER ===================================================== -->
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/style.css" />
 
-    <style>
-      .navbar {
-        font-family: "Montserrat", sans-serif;
-        color: #8d97ad;
-        font-weight: 300;
-        background: rgba(255, 255, 255, 0.76);
-        padding: 0.8rem 0;
-      }
-      .nav-item .nav-link {
-        padding: 12px 0px;
-        color: #8d97ad;
-        font-weight: 400;
-      }
-      .navbar-nav .nav-item .nav-link:hover {
-        color: #2cdd9b;
-      }
-    </style>
+  <title>Hello, world!</title>
+</head>
 
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-default fixed-top shadow"
-      aria-label="Main navigation"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#">Offcanvas navbar</a>
-        <!-- <button
-          class="navbar-toggler p-0 border-0"
-          type="button"
-          id="navbarSideCollapse"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button> -->
+<body>
+  <!--? ==========================  HEADER ===================================================== -->
 
-        <button
-          class="menu navbar-toggler p-0 border-0"
-          onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-          id="navbarSideCollapse"
-          aria-label="Main Menu"
-          style="border: none"
-        >
-          <svg width="50" height="50" viewBox="0 0 100 100">
-            <path
-              class="line line1"
-              d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
-            />
-            <path class="line line2" d="M 20,50 H 80" />
-            <path
-              class="line line3"
-              d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
-            />
-          </svg>
-        </button>
+  <style>
+    .navbar-light .navbar-toggler {
+      color: rgba(255, 255, 255, 0);
+      border-color: rgba(255, 255, 255, 0);
+    }
 
-        <div
-          class="navbar-collapse offcanvas-collapse"
-          id="navbarsExampleDefault"
-        >
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Dashboard</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Notifications</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Switch account</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="dropdown01"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-                >Settings</a
-              >
-              <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+    .navbar {
+      background: rgba(255, 255, 255, .7);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-default fixed-top shadow-sm" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#">Offcanvas navbar</a>
+
+      <button class="navbar-toggler p-0 border-0"
+        onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+        id="navbarSideCollapse" aria-label="Main Menu" style="border: none">
+        <svg width="50" height="50" viewBox="0 0 100 100">
+          <path class="line line1"
+            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+          <path class="line line2" d="M 20,50 H 80" />
+          <path class="line line3"
+            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Switch account</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!--? ===========================  HERO ==================================================== -->
+  <!--? ===========================  HERO ==================================================== -->
 
-    <style>
+  <style>
+    .static-slider4 .hero-img {
+      position: relative;
+      margin-top: 9%;
+    }
+
+    @media (max-width: 767px) {
       .static-slider4 .hero-img {
         position: relative;
-        margin-top: 9%;
+        margin-top: 20%;
       }
 
-      @media (max-width: 767px) {
-        .static-slider4 .hero-img {
-          position: relative;
-          margin-top: 20%;
-        }
-        .static-slider4 h1 {
-          line-height: 36px;
-          font-size: 24px;
-        }
-        .static-slider4 .hero-img {
-          position: relative;
-          top: 20px;
-        }
-        .static-slider4 .bg-info-gradiant {
-          margin-top: 100px;
-        }
+      .static-slider4 h1 {
+        line-height: 36px;
+        font-size: 24px;
       }
-    </style>
 
-    <div class="static-slider4">
-      <div class="container">
-        <!-- Row  -->
-        <div class="row">
-          <div class="col-md-5 hero-img">
-            <img
-              src="./assets/images/me.jpg"
-              alt="pulkit singh pic"
-              class="img-fluid"
-            />
-          </div>
-          <!-- Column -->
-          <div class="col-md-6 ml-auto align-self-center mt-3 mt-md-0">
-            <h1 class="title">
-              I’m pulkit Singh
-              <b class="font-weight-bold">
-                <br />
-                <span
-                  class="text-info-gradiant typewrite"
-                  data-period="2000"
-                  data-type='[ "SEO Expert", "HTML Expert", "CSS3 Expert"]'
-                ></span
-              ></b>
-            </h1>
-            <a class="btn btn-outline-info btn-md mt-3" href=""
-              ><span>Checkout My Work</span></a
-            >
-          </div>
-          <!-- Column -->
+      .static-slider4 .hero-img {
+        position: relative;
+        top: 20px;
+      }
+
+      .static-slider4 .bg-info-gradiant {
+        margin-top: 100px;
+      }
+    }
+  </style>
+
+  <div class="static-slider4">
+    <div class="container">
+      <!-- Row  -->
+      <div class="row">
+        <div class="col-md-5 hero-img">
+          <img src="./assets/images/me.jpg" alt="pulkit singh pic" class="img-fluid" />
         </div>
+        <!-- Column -->
+        <div class="col-md-6 ml-auto align-self-center mt-3 mt-md-0">
+          <h1 class="title">
+            I’m pulkit Singh
+            <b class="font-weight-bold">
+              <br />
+              <span class="text-info-gradiant typewrite" data-period="2000"
+                data-type='[ "SEO Expert", "HTML Expert", "CSS3 Expert"]'></span></b>
+          </h1>
+          <a class="btn btn-outline-info btn-md mt-3" href=""><span>Checkout My Work</span></a>
+        </div>
+        <!-- Column -->
       </div>
     </div>
+  </div>
 
-    <!--? =========================== PROGRESSION BAR ==================================== -->
+  <!--? =========================== PROGRESSION BAR ==================================== -->
 
-    <style>
-      .service-11 {
-        font-family: "Montserrat", sans-serif;
-        color: #8d97ad;
-        font-weight: 300;
-      }
+  <style>
+    .service-11 {
+      font-family: "Montserrat", sans-serif;
+      color: #8d97ad;
+      font-weight: 300;
+    }
 
-      .service-11 h1,
-      .service-11 h2,
-      .service-11 h3,
-      .service-11 h4,
-      .service-11 h5,
-      .service-11 h6 {
-        color: #3e4555;
-      }
+    .service-11 h1,
+    .service-11 h2,
+    .service-11 h3,
+    .service-11 h4,
+    .service-11 h5,
+    .service-11 h6 {
+      color: #3e4555;
+    }
 
-      .service-11 .font-weight-medium {
-        font-weight: 500;
-      }
+    .service-11 .font-weight-medium {
+      font-weight: 500;
+    }
 
-      .service-11 .bg-light {
-        background-color: #f4f8fa !important;
-      }
+    .service-11 .bg-light {
+      background-color: #f4f8fa !important;
+    }
 
-      .service-11 .subtitle {
-        color: #8d97ad;
-        line-height: 24px;
-      }
+    .service-11 .subtitle {
+      color: #8d97ad;
+      line-height: 24px;
+    }
 
-      .service-11 .card.card-shadow {
-        -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
-        box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
-      }
+    .service-11 .card.card-shadow {
+      -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+      box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    }
 
-      .service-11 .wrap-service11-box {
-        margin-top: 60px;
-      }
+    .service-11 .wrap-service11-box {
+      margin-top: 60px;
+    }
 
-      .service-11 .wrap-service11-box .icon-space {
-        margin: -70px 0 20px;
-      }
+    .service-11 .wrap-service11-box .icon-space {
+      margin: -70px 0 20px;
+    }
 
-      .service-11 .wrap-service11-box .icon-space .icon-round {
-        font-size: 45px;
-        color: #ffffff;
-      }
+    .service-11 .wrap-service11-box .icon-space .icon-round {
+      font-size: 45px;
+      color: #ffffff;
+    }
 
-      .service-11 .bg-success-gradiant {
-        background: #2cdd9b;
-        background: -webkit-linear-gradient(
-          legacy-direction(to right),
+    .service-11 .bg-success-gradiant {
+      background: #2cdd9b;
+      background: -webkit-linear-gradient(legacy-direction(to right),
           #2cdd9b 0%,
-          #1dc8cc 100%
-        );
-        background: -webkit-gradient(
-          linear,
+          #1dc8cc 100%);
+      background: -webkit-gradient(linear,
           left top,
           right top,
           from(#2cdd9b),
-          to(#1dc8cc)
-        );
-        background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
-      }
+          to(#1dc8cc));
+      background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    }
 
-      .service-11 .icon-round {
-        width: 80px;
-        line-height: 80px;
-      }
+    .service-11 .icon-round {
+      width: 80px;
+      line-height: 80px;
+    }
 
-      .service-11 .btn-success-gradiant {
-        background: #2cdd9b;
-        background: -webkit-linear-gradient(
-          legacy-direction(to right),
+    .service-11 .btn-success-gradiant {
+      background: #2cdd9b;
+      background: -webkit-linear-gradient(legacy-direction(to right),
           #2cdd9b 0%,
-          #1dc8cc 100%
-        );
-        background: -webkit-gradient(
-          linear,
+          #1dc8cc 100%);
+      background: -webkit-gradient(linear,
           left top,
           right top,
           from(#2cdd9b),
-          to(#1dc8cc)
-        );
-        background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
-      }
+          to(#1dc8cc));
+      background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    }
 
-      .service-11 .btn-success-gradiant:hover {
-        background: #1dc8cc;
-        background: -webkit-linear-gradient(
-          legacy-direction(to right),
+    .service-11 .btn-success-gradiant:hover {
+      background: #1dc8cc;
+      background: -webkit-linear-gradient(legacy-direction(to right),
           #1dc8cc 0%,
-          #2cdd9b 100%
-        );
-        background: -webkit-gradient(
-          linear,
+          #2cdd9b 100%);
+      background: -webkit-gradient(linear,
           left top,
           right top,
           from(#1dc8cc),
-          to(#2cdd9b)
-        );
-        background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-        background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-        background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);
-      }
+          to(#2cdd9b));
+      background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+      background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+      background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);
+    }
 
-      .service-11 .btn-md {
-        padding: 15px 45px;
-        font-size: 16px;
-      }
+    .service-11 .btn-md {
+      padding: 15px 45px;
+      font-size: 16px;
+    }
 
-      .progress_bar .pro-bar {
-        background: hsl(0, 0%, 97%);
-        box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
-        height: 4px;
-        margin-bottom: 12px;
-        margin-top: 50px;
-        position: relative;
-      }
-      .progress_bar .progress_bar_title {
-        color: hsl(218, 4%, 50%);
-        font-size: 15px;
-        font-weight: 300;
-        position: relative;
-        top: -28px;
-        z-index: 1;
-      }
-      .progress_bar .progress_number {
-        float: right;
-        margin-top: -0px;
-      }
-      .progress_bar .progress-bar-inner {
-        background-color: hsl(0, 0%, 88%);
-        display: block;
-        width: 0;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: width 1s linear 0s;
-      }
-      .progress_bar .progress-bar-inner:before {
-        content: "";
-        background-color: hsl(0, 0%, 100%);
-        border-radius: 50%;
-        width: 4px;
-        height: 4px;
-        position: absolute;
-        right: 1px;
-        top: 0;
-        z-index: 1;
-      }
-      .progress_bar .progress-bar-inner:after {
-        content: "";
-        width: 14px;
-        height: 14px;
-        background-color: inherit;
-        border-radius: 50%;
-        position: absolute;
-        right: -4px;
-        top: -5px;
-      }
-    </style>
+    .progress_bar .pro-bar {
+      background: hsl(0, 0%, 97%);
+      box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+      height: 4px;
+      margin-bottom: 12px;
+      margin-top: 50px;
+      position: relative;
+    }
 
-    <div class="py-5">
-      <div class="container">
-        <h1 class="text-center">Skills</h1>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="progress_bar">
-              <div class="pro-bar">
-                <small class="progress_bar_title">
-                  HTML<span class="progress_number">89%</span>
-                </small>
-                <span
-                  class="progress-bar-inner"
-                  style="background-color: #1abc9c; width: 89%"
-                  data-value="89"
-                  data-percentage-value="89"
-                ></span>
-              </div>
-            </div>
-            <div class="progress_bar">
-              <div class="pro-bar">
-                <small class="progress_bar_title">
-                  C<span class="progress_number">75%</span>
-                </small>
-                <span
-                  class="progress-bar-inner"
-                  style="background-color: #fdba04; width: 75%"
-                  data-value="75"
-                  data-percentage-value="75"
-                ></span>
-              </div>
+    .progress_bar .progress_bar_title {
+      color: hsl(218, 4%, 50%);
+      font-size: 15px;
+      font-weight: 300;
+      position: relative;
+      top: -28px;
+      z-index: 1;
+    }
+
+    .progress_bar .progress_number {
+      float: right;
+      margin-top: -0px;
+    }
+
+    .progress_bar .progress-bar-inner {
+      background-color: hsl(0, 0%, 88%);
+      display: block;
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: width 1s linear 0s;
+    }
+
+    .progress_bar .progress-bar-inner:before {
+      content: "";
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 50%;
+      width: 4px;
+      height: 4px;
+      position: absolute;
+      right: 1px;
+      top: 0;
+      z-index: 1;
+    }
+
+    .progress_bar .progress-bar-inner:after {
+      content: "";
+      width: 14px;
+      height: 14px;
+      background-color: inherit;
+      border-radius: 50%;
+      position: absolute;
+      right: -4px;
+      top: -5px;
+    }
+  </style>
+
+  <div class="py-5">
+    <div class="container">
+      <h1 class="text-center">Skills</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="progress_bar">
+            <div class="pro-bar">
+              <small class="progress_bar_title">
+                HTML<span class="progress_number">89%</span>
+              </small>
+              <span class="progress-bar-inner" style="background-color: #1abc9c; width: 89%" data-value="89"
+                data-percentage-value="89"></span>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="progress_bar">
-              <div class="pro-bar">
-                <small class="progress_bar_title">
-                  HTML<span class="progress_number">89%</span>
-                </small>
-                <span
-                  class="progress-bar-inner"
-                  style="background-color: #bc1a86; width: 89%"
-                  data-value="89"
-                  data-percentage-value="89"
-                ></span>
-              </div>
+          <div class="progress_bar">
+            <div class="pro-bar">
+              <small class="progress_bar_title">
+                C<span class="progress_number">75%</span>
+              </small>
+              <span class="progress-bar-inner" style="background-color: #fdba04; width: 75%" data-value="75"
+                data-percentage-value="75"></span>
             </div>
-            <div class="progress_bar">
-              <div class="pro-bar">
-                <small class="progress_bar_title">
-                  C<span class="progress_number">75%</span>
-                </small>
-                <span
-                  class="progress-bar-inner"
-                  style="background-color: #1d04fd; width: 75%"
-                  data-value="75"
-                  data-percentage-value="75"
-                ></span>
-              </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="progress_bar">
+            <div class="pro-bar">
+              <small class="progress_bar_title">
+                HTML<span class="progress_number">89%</span>
+              </small>
+              <span class="progress-bar-inner" style="background-color: #bc1a86; width: 89%" data-value="89"
+                data-percentage-value="89"></span>
+            </div>
+          </div>
+          <div class="progress_bar">
+            <div class="pro-bar">
+              <small class="progress_bar_title">
+                C<span class="progress_number">75%</span>
+              </small>
+              <span class="progress-bar-inner" style="background-color: #1d04fd; width: 75%" data-value="75"
+                data-percentage-value="75"></span>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--? =========================== CARDS ==================================================== -->
+  <!--? =========================== CARDS ==================================================== -->
 
-    <div class="bg-light py-5 service-11">
-      <div class="container">
-        <h1 class="text-center">Work experience</h1>
-        <!-- Row  -->
-        <div class="row">
-          <!-- Column -->
-          <div class="col-md-4 wrap-service11-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="p-4">
-                <div class="icon-space">
-                  <div
-                    class="
+  <div class="bg-light py-5 service-11">
+    <div class="container">
+      <h1 class="text-center">Work experience</h1>
+      <!-- Row  -->
+      <div class="row">
+        <!-- Column -->
+        <div class="col-md-4 wrap-service11-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="p-4">
+              <div class="icon-space">
+                <div class="
                       icon-round
                       text-center
                       d-inline-block
                       rounded-circle
                       bg-success-gradiant
-                    "
-                  >
-                    R
-                  </div>
+                    ">
+                  R
                 </div>
-                <h6 class="font-weight-medium">Retargeting Market</h6>
-                <p class="mt-3">
-                  You can relay on our amazing features list and also our
-                  customer services will be great experience.
-                </p>
               </div>
+              <h6 class="font-weight-medium">Retargeting Market</h6>
+              <p class="mt-3">
+                You can relay on our amazing features list and also our
+                customer services will be great experience.
+              </p>
             </div>
           </div>
-          <!-- Column -->
-          <div class="col-md-4 wrap-service11-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="p-4">
-                <div class="icon-space">
-                  <div
-                    class="
+        </div>
+        <!-- Column -->
+        <div class="col-md-4 wrap-service11-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="p-4">
+              <div class="icon-space">
+                <div class="
                       icon-round
                       text-center
                       d-inline-block
                       rounded-circle
                       bg-success-gradiant
-                    "
-                  >
-                    F
-                  </div>
+                    ">
+                  F
                 </div>
-                <h6 class="font-weight-medium">Fruitful Results</h6>
-                <p class="mt-3">
-                  You can relay on our amazing features list and also our
-                  customer services will be great experience.
-                </p>
               </div>
+              <h6 class="font-weight-medium">Fruitful Results</h6>
+              <p class="mt-3">
+                You can relay on our amazing features list and also our
+                customer services will be great experience.
+              </p>
             </div>
           </div>
-          <!-- Column -->
-          <div class="col-md-4 wrap-service11-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="p-4">
-                <div class="icon-space">
-                  <div
-                    class="
+        </div>
+        <!-- Column -->
+        <div class="col-md-4 wrap-service11-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="p-4">
+              <div class="icon-space">
+                <div class="
                       icon-round
                       text-center
                       d-inline-block
                       rounded-circle
                       bg-success-gradiant
-                    "
-                  >
-                    S
-                  </div>
+                    ">
+                  S
                 </div>
-                <h6 class="font-weight-medium">Instant Solutions</h6>
-                <p class="mt-3">
-                  You can relay on our amazing features list and also our
-                  customer services will be great experience.
-                </p>
               </div>
+              <h6 class="font-weight-medium">Instant Solutions</h6>
+              <p class="mt-3">
+                You can relay on our amazing features list and also our
+                customer services will be great experience.
+              </p>
             </div>
           </div>
-          <div class="col-md-12 mt-3 text-center">
-            <a
-              class="btn btn-success-gradiant text-white border-0 btn-md"
-              href="#f11"
-              ><span>View Details</span></a
-            >
-          </div>
+        </div>
+        <div class="col-md-12 mt-3 text-center">
+          <a class="btn btn-success-gradiant text-white border-0 btn-md" href="#f11"><span>View Details</span></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ? =========================== PROJECTS ================================================= -->
+  <!-- ? =========================== PROJECTS ================================================= -->
 
-    <style>
-      .service-13 .font-weight-medium {
-        font-weight: 500;
-      }
+  <style>
+    .service-13 .font-weight-medium {
+      font-weight: 500;
+    }
 
-      .service-13 .bg-light {
-        background-color: #f4f8fa !important;
-      }
+    .service-13 .bg-light {
+      background-color: #f4f8fa !important;
+    }
 
-      .service-13 a {
-        text-decoration: none;
-      }
+    .service-13 a {
+      text-decoration: none;
+    }
 
-      .service-13 .btn-success-gradiant {
-        background: #2cdd9b;
-        background: -webkit-linear-gradient(
-          legacy-direction(to right),
+    .service-13 .btn-success-gradiant {
+      background: #2cdd9b;
+      background: -webkit-linear-gradient(legacy-direction(to right),
           #2cdd9b 0%,
-          #1dc8cc 100%
-        );
-        background: -webkit-gradient(
-          linear,
+          #1dc8cc 100%);
+      background: -webkit-gradient(linear,
           left top,
           right top,
           from(#2cdd9b),
-          to(#1dc8cc)
-        );
-        background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-        background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
-      }
+          to(#1dc8cc));
+      background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+      background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    }
 
-      .service-13 .btn-success-gradiant:hover {
-        background: #1dc8cc;
-        background: -webkit-linear-gradient(
-          legacy-direction(to right),
+    .service-13 .btn-success-gradiant:hover {
+      background: #1dc8cc;
+      background: -webkit-linear-gradient(legacy-direction(to right),
           #1dc8cc 0%,
-          #2cdd9b 100%
-        );
-        background: -webkit-gradient(
-          linear,
+          #2cdd9b 100%);
+      background: -webkit-gradient(linear,
           left top,
           right top,
           from(#1dc8cc),
-          to(#2cdd9b)
-        );
-        background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-        background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
-        background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);
-      }
+          to(#2cdd9b));
+      background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+      background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+      background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);
+    }
 
-      .service-13 .linking {
-        color: #3e4555;
-      }
+    .service-13 .linking {
+      color: #3e4555;
+    }
 
-      .service-13 .linking:hover {
-        color: #316ce8;
-      }
+    .service-13 .linking:hover {
+      color: #316ce8;
+    }
 
-      .service-13 .card.card-shadow {
-        -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
-        box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
-      }
+    .service-13 .card.card-shadow {
+      -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+      box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    }
 
-      .service-13 .btn-md {
-        padding: 15px 45px;
-        font-size: 16px;
-      }
-    </style>
+    .service-13 .btn-md {
+      padding: 15px 45px;
+      font-size: 16px;
+    }
+  </style>
 
-    <div class="bg-light py-3 service-13">
-      <div class="container">
-        <!-- Row  -->
-        <div class="row">
-          <!-- Column -->
-          <div class="col-lg-6 wrap-service13-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="row no-gutters align-items-stretch">
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img1.jpg"
-                    alt="wrapkit"
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-md-6 p-3 d-flex align-items-stretch">
-                  <div class="ml-2">
-                    <h6 class="font-weight-medium mt-2">
-                      <a href="javascript:void(0)" class="linking"
-                        >Instant Solutions</a
-                      >
-                    </h6>
-                    <p class="mt-3">
-                      You can relay on our amazing features list and also our
-                      customer.
-                    </p>
-                  </div>
+  <div class="bg-light py-3 service-13">
+    <div class="container">
+      <!-- Row  -->
+      <div class="row">
+        <!-- Column -->
+        <div class="col-lg-6 wrap-service13-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="row no-gutters align-items-stretch">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img1.jpg"
+                  alt="wrapkit" class="img-fluid rounded" />
+              </div>
+              <div class="col-md-6 p-3 d-flex align-items-stretch">
+                <div class="ml-2">
+                  <h6 class="font-weight-medium mt-2">
+                    <a href="javascript:void(0)" class="linking">Instant Solutions</a>
+                  </h6>
+                  <p class="mt-3">
+                    You can relay on our amazing features list and also our
+                    customer.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Column -->
-          <div class="col-lg-6 wrap-service13-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="row no-gutters align-items-stretch">
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img2.jpg"
-                    alt="wrapkit"
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-md-6 p-3 d-flex align-items-stretch">
-                  <div class="ml-2">
-                    <h6 class="font-weight-medium mt-2">
-                      <a href="javascript:void(0)" class="linking"
-                        >Instant Solutions</a
-                      >
-                    </h6>
-                    <p class="mt-3">
-                      You can relay on our amazing features list and also our
-                      customer.
-                    </p>
-                  </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-6 wrap-service13-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="row no-gutters align-items-stretch">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img2.jpg"
+                  alt="wrapkit" class="img-fluid rounded" />
+              </div>
+              <div class="col-md-6 p-3 d-flex align-items-stretch">
+                <div class="ml-2">
+                  <h6 class="font-weight-medium mt-2">
+                    <a href="javascript:void(0)" class="linking">Instant Solutions</a>
+                  </h6>
+                  <p class="mt-3">
+                    You can relay on our amazing features list and also our
+                    customer.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Column -->
-          <!-- Column -->
-          <div class="col-lg-6 wrap-service13-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="row no-gutters align-items-stretch">
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img3.jpg"
-                    alt="wrapkit"
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="col-md-6 p-3 d-flex align-items-stretch">
-                  <div class="ml-2">
-                    <h6 class="font-weight-medium mt-2">
-                      <a href="javascript:void(0)" class="linking"
-                        >Instant Solutions</a
-                      >
-                    </h6>
-                    <p class="mt-3">
-                      You can relay on our amazing features list and also our
-                      customer.
-                    </p>
-                  </div>
+        </div>
+        <!-- Column -->
+        <!-- Column -->
+        <div class="col-lg-6 wrap-service13-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="row no-gutters align-items-stretch">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img3.jpg"
+                  alt="wrapkit" class="img-fluid rounded" />
+              </div>
+              <div class="col-md-6 p-3 d-flex align-items-stretch">
+                <div class="ml-2">
+                  <h6 class="font-weight-medium mt-2">
+                    <a href="javascript:void(0)" class="linking">Instant Solutions</a>
+                  </h6>
+                  <p class="mt-3">
+                    You can relay on our amazing features list and also our
+                    customer.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <!-- Column -->
-          <div class="col-lg-6 wrap-service13-box">
-            <div class="card card-shadow border-0 mb-4">
-              <div class="row no-gutters align-items-stretch">
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <img
-                    src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img4.jpg"
-                    alt="wrapkit"
-                    class="img-fluid rounded"
-                  />
-                </div>
-                <div class="p-3 col-md-6 d-flex align-items-stretch">
-                  <div class="ml-2">
-                    <h6 class="font-weight-medium mt-2">
-                      <a href="javascript:void(0)" class="linking"
-                        >Instant Solutions</a
-                      >
-                    </h6>
-                    <p class="mt-3">
-                      You can relay on our amazing features list and also our
-                      customer.
-                    </p>
-                  </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-6 wrap-service13-box">
+          <div class="card card-shadow border-0 mb-4">
+            <div class="row no-gutters align-items-stretch">
+              <div class="col-md-6 d-flex align-items-stretch">
+                <img src="https://www.wrappixel.com/demos/ui-kit/wrapkit/assets/images/features/feature13/img4.jpg"
+                  alt="wrapkit" class="img-fluid rounded" />
+              </div>
+              <div class="p-3 col-md-6 d-flex align-items-stretch">
+                <div class="ml-2">
+                  <h6 class="font-weight-medium mt-2">
+                    <a href="javascript:void(0)" class="linking">Instant Solutions</a>
+                  </h6>
+                  <p class="mt-3">
+                    You can relay on our amazing features list and also our
+                    customer.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-12 mt-3 text-center">
-            <a
-              class="btn btn-success-gradiant btn-md border-0 text-white"
-              href="#f13"
-              ><span>View Details</span></a
-            >
-          </div>
+        </div>
+        <div class="col-md-12 mt-3 text-center">
+          <a class="btn btn-success-gradiant btn-md border-0 text-white" href="#f13"><span>View Details</span></a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- ? =========================== PROJECTS ================================================= -->
+  <!-- ? =========================== PROJECTS ================================================= -->
 
-    <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./assets/main.js"></script>
-  </body>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="./assets/main.js"></script>
+</body>
+
 </html>
