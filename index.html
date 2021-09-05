@@ -12,6 +12,9 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <link rel="stylesheet" href="./assets/style.css" />
 
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
   <title>Hello, world!</title>
 </head>
 
@@ -597,6 +600,188 @@
   </div>
 
   <!-- ? =========================== PROJECTS ================================================= -->
+
+
+  <style>
+    footer {
+      padding: 5% 0 1% 0;
+      background: #fc00ff;
+      background: -webkit-linear-gradient(left, #fc00ff 0%, #00dbde 100%);
+      background: -o-linear-gradient(left, #fc00ff 0%, #00dbde 100%);
+      background: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);
+    }
+
+    .social-btns .btn,
+    .social-btns .btn:before,
+    .social-btns .btn .fa {
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s;
+      -webkit-transition-timing-function: cubic-bezier(0.31,
+          -0.105,
+          0.43,
+          1.59);
+      transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    }
+
+    .social-btns .btn:before {
+      top: 90%;
+      left: -110%;
+    }
+
+    .social-btns .btn .fa {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+    }
+
+    .social-btns .btn.facebook:before {
+      background-color: #3b5998;
+    }
+
+    .social-btns .btn.facebook .fa {
+      color: #3b5998;
+    }
+
+    .social-btns .btn.twitter:before {
+      background-color: #3cf;
+    }
+
+    .social-btns .btn.twitter .fa {
+      color: #3cf;
+    }
+
+    .social-btns .btn.google:before {
+      background-color: #dc4a38;
+    }
+
+    .social-btns .btn.google .fa {
+      color: #dc4a38;
+    }
+
+    .social-btns .btn.dribbble:before {
+      background-color: #f26798;
+    }
+
+    .social-btns .btn.dribbble .fa {
+      color: #f26798;
+    }
+
+    .social-btns .btn.skype:before {
+      background-color: #00aff0;
+    }
+
+    .social-btns .btn.skype .fa {
+      color: #00aff0;
+    }
+
+    .social-btns .btn:focus:before,
+    .social-btns .btn:hover:before {
+      top: -10%;
+      left: -10%;
+    }
+
+    .social-btns .btn:focus .fa,
+    .social-btns .btn:hover .fa {
+      color: #fff;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    .social-btns {
+      height: 6rem;
+      margin: auto;
+      font-size: 0;
+      text-align: center;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translatey(0px);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .social-btns .btn {
+      display: inline-block;
+      background-color: #fff;
+      width: 4.7rem;
+      height: 4.7rem;
+      line-height: 90px;
+      margin: 0 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+      opacity: 0.99;
+    }
+
+    .social-btns .btn:before {
+      content: "";
+      width: 150%;
+      height: 150%;
+      position: absolute;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    .social-btns .btn .fa {
+      font-size: 3rem;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translatey(0px);
+      }
+
+      50% {
+        transform: translatey(-20px);
+      }
+
+      100% {
+        transform: translatey(0px);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .social-btns .btn {
+        display: inline-block;
+        background-color: #fff;
+        width: 2.7rem;
+        height: 2.7rem;
+        line-height: 60px;
+        margin: 0 0.7rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+        opacity: 0.99;
+      }
+
+      .social-btns {
+        height: 4rem;
+        margin: auto;
+        font-size: 0;
+        text-align: center;
+        transform: translatey(0px);
+        animation: float 2s ease-in-out infinite;
+      }
+
+      .social-btns .btn .fa {
+        font-size: 2.3rem;
+      }
+
+    }
+  </style>
+
+  <footer>
+    <div class="social-btns mb-4">
+      <a class="btn facebook" href="#"><i class="fa fa-facebook"></i></a><a class="btn twitter" href="#"><i
+          class="fa fa-twitter"></i></a><a class="btn google" href="#"><i class="fa fa-google"></i></a><a
+        class="btn dribbble" href="#"><i class="fa fa-dribbble"></i></a><a class="btn skype" href="#"><i
+          class="fa fa-skype"></i></a>
+    </div>
+  </footer>
+
 
   <!-- Optional JavaScript; choose one of the two! -->
 
