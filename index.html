@@ -79,10 +79,18 @@
     .bg-success-gradiant {
       padding: 3% 6%;
       border-radius: 0px;
-      background: #2cdd9b;
-      background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-      background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
-      background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+      background: #fc00ff;
+      background: -webkit-linear-gradient(left, #fc00ff 0%, #00dbde 100%);
+      background: -o-linear-gradient(left, #fc00ff 0%, #00dbde 100%);
+      background: linear-gradient(to right, #fc00ff 0%, #00dbde 100%);
+      transition: transform .5s;
+    }
+
+    .bg-success-gradiant:hover {
+      transform: scale(1.08);
+      /* box-shadow: 0 5px 8px rgba(0,0,0,0.3); */
+
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
     @media (max-width: 767px) {
@@ -123,7 +131,7 @@
               <span class="text-info-gradiant typewrite" data-period="2000"
                 data-type='[ "SEO Expert", "HTML Expert", "CSS3 Expert"]'></span></b>
           </h1>
-          <a class="btn bg-success-gradiant text-white border-0 shadow-sm">Checkout My Work</a>
+          <a class="btn bg-success-gradiant text-white border-0">Checkout My Work</a>
 
         </div>
         <!-- Column -->
